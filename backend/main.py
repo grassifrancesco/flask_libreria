@@ -2,45 +2,36 @@ from flask import Flask, jsonify
 from markupsafe import escape
 from faker import Faker
 from flask_cors import CORS
+from flask import request
+import uuid
 
 app = Flask(__name__)
 CORS(app)
 
-faker = Faker()
+fake = Faker()
 
 @app.route('/')
 def index():
-    return 'Index Page'
+    return 'INDEX DELLA API, VAI SU /api/libri PER OTTENERE DEI LIBRI'
 
-@app.route('/hello')
-def hello():
-    return 'Hello, World'
+@app.route("/api/libri", methods=["GET"])
+def get_libri():
+    libri = []
+    
+    for i in range(20):
+        libro = {
+            "id": str(uuid.uuid4()),
+            "titolo": fake.sentence(nb_words=3).rstrip('.').title(),
+            "autore": fake.name(),
+            "anno": fake.year(),
+            "genere": fake.random_element(elements=("M", "F"))
+        }
 
-@app.route('/user/<username>')
-def show_user_profile(username):
-    return f'User {escape(username)}'
-
-@app.route('/post/<int:post_id>')
-def show_post(post_id):
-    return f'Post {post_id}'
-
-@app.route("/fake")
-def fake_profile():
-    profile = {
-        "nome": faker.name(),
-        "email": faker.email(),
-        "indirizzo": faker.address().replace("\n", ", "),
-        "telefono": faker.phone_number(),
-        "azienda": faker.company(),
-        "lavoro": faker.job(),
-        "data_nascita": faker.date_of_birth(minimum_age=18, maximum_age=70).isoformat(),
-        "username": faker.user_name(),
-        "avatar": faker.image_url(width=128, height=128)
-    }
+        libri.append(libro)
 
     return jsonify({
         "success": True,
-        "data": profile
+        "data": libri
     })
 
 if __name__ == "__main__":
