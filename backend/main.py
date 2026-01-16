@@ -38,6 +38,7 @@ def get_libri():
 def post_libro():
     libro = request.get_json()
 
+    # CONTROLLO SE IL LIBRO CHE VOGLIO CREARE CONTIENE TUTTI I DATI NECESSARI
     if not libro or "titolo" not in libro or "autore" not in libro or "anno" not in libro or "genere" not in libro:
         return jsonify({"success": False, "error": "Dati mancanti"}), 400
     
