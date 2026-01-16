@@ -2,6 +2,10 @@
 
 Progetto di TPI per la creazione di una libreria utilizzando Flask per la gestionedel backend e React con ViteJS per il frontend.
 
+## DIAGRAMMA DELLA LOGICA:
+
+![Diagramma della logica riguardo il funzionamento dell'applicativo](diagramma_flask_libreria_drawio.svg)
+
 ## ANALISI DEI REQUISITI:
 
 1) 1
