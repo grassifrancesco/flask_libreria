@@ -1,34 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
+import "./App.css"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [profile, setProfile] = useState(null)
+  const [loading, setLoading] = useState(false)
+
+  const getFakeProfile = async () => {
+    setLoading(true)
+    try {
+      const res = await fetch("http://localhost:12346/fake")
+      const data = await res.json()
+      setProfile(data.data)   // perché la tua API restituisce { success, data }
+    } catch (err) {
+      console.error("Errore nel fetch:", err)
+    }
+    setLoading(false)
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="container">
+      <h1 className="title">Fake Profile Generator</h1>
+
+      <button className="btn" onClick={getFakeProfile}>
+        Genera Profilo
+      </button>
+
+      {loading && <p className="loading">Caricamento...</p>}
+
+      {profile && (
+        <div className="card profile-card">
+          <h2>{profile.nome}</h2>
+          <p><strong>Email:</strong> {profile.email}</p>
+          <p><strong>Telefono:</strong> {profile.telefono}</p>
+          <p><strong>Indirizzo:</strong> {profile.indirizzo}</p>
+          <p><strong>Azienda:</strong> {profile.azienda}</p>
+          <p><strong>Lavoro:</strong> {profile.lavoro}</p>
+          <p><strong>Data di nascita:</strong> {profile.data_nascita}</p>
+          <p><strong>Username:</strong> {profile.username}</p>
+        </div>
+      )}
+    </div>
   )
 }
 
