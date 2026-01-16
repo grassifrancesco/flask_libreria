@@ -1,5 +1,6 @@
 # flask_libreria
-Progetto di TPI per la creazione di una libreria utilizzando Flask per il backend e React con Vite per il frontend.
+
+Progetto di TPI per la creazione di una libreria utilizzando Flask per la gestionedel backend e React con ViteJS per il frontend.
 
 ## ANALISI DEI REQUISITI:
 
