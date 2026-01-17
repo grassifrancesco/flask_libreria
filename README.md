@@ -58,13 +58,7 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
 ## Istruzioni di avvio
 
 1. Clonare il repository  
-2. Installare le dipendenze del backend (`pip install -r requirements.txt`)  
-3. Avviare il server Flask (`flask run`)  
+2. Installare le dipendenze del backend (`pip install flask flask_cors`) SQLite3 dovrebbe essere già installato di default
+3. Avviare il server Flask (`python3 main.py`)  
 4. Installare le dipendenze del frontend (`npm install`)  
-5. Avviare il frontend (`npm run dev`)  
-
----
-
-## Obiettivo finale
-
-Creare un'applicazione completa per la gestione di una libreria digitale, con un backend solido e un frontend intuitivo e gradevole.
+5. Avviare il frontend (`npm run dev`)
