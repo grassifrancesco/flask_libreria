@@ -1,24 +1,23 @@
-# flask_libreria
+# Flask Libreria
 
-Progetto di TPI per la creazione di una libreria digitale.  
+Progetto di **TPI** per la creazione di una libreria digitale.  
 Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, mentre il frontend è realizzato con **React** e **ViteJS**.
 
 ---
 
 ## Diagramma della logica
 
-![Diagramma della logica riguardo il funzionamento dell'applicativo](diagramma_flask_libreria_drawio.svg)
+![Diagramma della logica dell'applicativo](diagramma_flask_libreria_drawio.svg)
 
 ---
 
 ## Analisi dei requisiti
 
-1. Gestione dei libri tramite API REST
-2. Persistenza dei dati con database SQLite
-3. Interfaccia frontend moderna e responsiva
-4. Funzionalità CRUD (Create, Read, Update, Delete)
-5. Integrazione tra backend e frontend
-- ecc.
+1. Gestione dei libri tramite API REST  
+2. Persistenza dei dati con database SQLite  
+3. Interfaccia frontend moderna e responsiva  
+4. Funzionalità CRUD (Create, Read, Update, Delete)  
+5. Integrazione tra backend e frontend  
 
 ---
 
@@ -36,41 +35,68 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
 
 ## Attività rimanenti
 
-- [ ] Sistemare il backend (ottimizzazione, validazioni, gestione errori)  
-- [ ] Sistemare il frontend (UI/UX, allineamento messaggi di errore, rifiniture grafiche)  
+- [ ] Ottimizzazione del backend (validazioni, gestione errori)  
+- [ ] Miglioramenti al frontend (UI/UX, messaggi di errore, rifiniture grafiche)  
 
 ---
 
 ## Struttura del progetto
 
-- **Backend (Flask)**  
-  - API REST per la gestione dei libri  
-  - Connessione al database SQLite  
-  - Validazione delle richieste  
+### Backend (Flask)
+- API REST per la gestione dei libri  
+- Connessione al database SQLite  
+- Validazione delle richieste  
 
-- **Frontend (React + ViteJS)**  
-  - Interfaccia utente per la visualizzazione e gestione dei libri  
-  - Componenti modulari e riutilizzabili  
-  - Gestione degli stati e delle chiamate API  
+### Frontend (React + ViteJS)
+- Interfaccia utente per la visualizzazione e gestione dei libri  
+- Componenti modulari e riutilizzabili  
+- Gestione degli stati e delle chiamate API  
 
 ---
 
 ## Istruzioni di avvio
 
 1. Clonare il repository  
-2. Installare le dipendenze del backend (`pip install flask flask_cors`) SQLite3 dovrebbe essere già installato di default
-3. Avviare il server Flask (`python3 main.py`)  
-4. Installare le dipendenze del frontend (`npm install`)  
-5. Avviare il frontend (`npm run dev`)
+2. Installare SQLite3 e creare il database `libri.sqlite3` nella cartella backend con il comando:  
+   ```bash
+   sqlite3 libri.sqlite3
+   ```
+3. Creare la tabella libro con il comando:
+   ```sql
+   CREATE TABLE libro (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titolo TEXT NOT NULL,
+    autore TEXT NOT NULL,
+    anno INTEGER NOT NULL
+   );
+   ```
+4. Installare le dipendenze del backend:
+   ```bash
+   pip install flask flask_cors
+   ```
+   (SQLite3 è già incluso di default in Python)
+5. Avviare il server Flask:
+   ```bash
+   python3 main.py
+   ```
+6. Installare le dipendenze del frontend:
+   ```bash
+   npm install
+   ```
+7. Avviare il frontend:
+   ```bash
+   npm run dev
+   ```
 
 ---
 
 ## Licenza
 
-Questo progetto è rilasciato sotto la licenza GPL3. Per maggiori dettagli, consulta il file [LICENSE](LICENSE).
+Questo progetto è rilasciato sotto la licenza GPL3.
+Per maggiori dettagli, consulta il file [LICENSE](LICENSE)
 
 ---
 
 ## Codice di etica
 
-Il codice di etica di SQLite è disponibile all'indirizzo [https://sqlite.org/codeofethics.html](https://sqlite.org/codeofethics.html).
+Il codice di etica di SQLite è disponibile al seguente indirizzo: https://sqlite.org/codeofethics.html
