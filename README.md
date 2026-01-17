@@ -1,26 +1,70 @@
 # flask_libreria
 
-Progetto di TPI per la creazione di una libreria utilizzando Flask per la gestionedel backend e React con ViteJS per il frontend.
+Progetto di TPI per la creazione di una libreria digitale.  
+Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, mentre il frontend è realizzato con **React** e **ViteJS**.
 
-## DIAGRAMMA DELLA LOGICA:
+---
+
+## Diagramma della logica
 
 ![Diagramma della logica riguardo il funzionamento dell'applicativo](diagramma_flask_libreria_drawio.svg)
 
-## ANALISI DEI REQUISITI:
+---
 
-1) 1
-2) 2
-3) 3
-- ecc
+## Analisi dei requisiti
 
-## COSA RIMANE DA FARE:
+1. Gestione dei libri tramite API REST
+2. Persistenza dei dati con database SQLite
+3. Interfaccia frontend moderna e responsiva
+4. Funzionalità CRUD (Create, Read, Update, Delete)
+5. Integrazione tra backend e frontend
+- ecc.
 
-- [x] Aggiungere database SQLite
-- [x] Richiesta GET /api/libri
-- [x] Fare ancora tutto il frontend
-  - [x] Renderlo bello
-- [x] Richiesta POST /api/libri
-- [x] Richiesta DELETE /api/libri/<id>
-- [x] Richiesta DELETE /api/libri
-- [] Sistemare il backend?
-- [] Sistemare il frontend?
+---
+
+## Funzionalità implementate
+
+- [x] Configurazione database SQLite  
+- [x] Endpoint **GET /api/libri**  
+- [x] Endpoint **POST /api/libri**  
+- [x] Endpoint **DELETE /api/libri/<id>**  
+- [x] Endpoint **DELETE /api/libri**  
+- [x] Creazione del frontend con React + Vite  
+  - [x] Miglioramento estetico dell'interfaccia  
+
+---
+
+## Attività rimanenti
+
+- [ ] Sistemare il backend (ottimizzazione, validazioni, gestione errori)  
+- [ ] Sistemare il frontend (UI/UX, allineamento messaggi di errore, rifiniture grafiche)  
+
+---
+
+## Struttura del progetto
+
+- **Backend (Flask)**  
+  - API REST per la gestione dei libri  
+  - Connessione al database SQLite  
+  - Validazione delle richieste  
+
+- **Frontend (React + ViteJS)**  
+  - Interfaccia utente per la visualizzazione e gestione dei libri  
+  - Componenti modulari e riutilizzabili  
+  - Gestione degli stati e delle chiamate API  
+
+---
+
+## Istruzioni di avvio
+
+1. Clonare il repository  
+2. Installare le dipendenze del backend (`pip install -r requirements.txt`)  
+3. Avviare il server Flask (`flask run`)  
+4. Installare le dipendenze del frontend (`npm install`)  
+5. Avviare il frontend (`npm run dev`)  
+
+---
+
+## Obiettivo finale
+
+Creare un'applicazione completa per la gestione di una libreria digitale, con un backend solido e un frontend intuitivo e gradevole.
