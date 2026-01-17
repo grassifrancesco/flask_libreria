@@ -2,9 +2,9 @@ import BookCard from "./BookCard";
 
 const BookList = ({ libri, loading, deleteLibro, deleteAllLibri }) => {
   return (
-    <div className="card">
+    <div className="card book-list-container">
       <div className="header">
-        <h2>Libri ({libri.length})</h2>
+        <h2>📚 Libri ({libri.length})</h2>
         {libri.length > 0 && (
           <button className="btn-delete" onClick={deleteAllLibri}>
             Elimina Tutti

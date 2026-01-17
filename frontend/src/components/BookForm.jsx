@@ -6,12 +6,14 @@ const BookForm = ({ formData, setFormData, addLibro, loading, generi }) => {
   const validateYear = (year) => {
     const currentYear = new Date().getFullYear();
     const yearNum = parseInt(year);
-    
-    if (!year) return "L'anno è obbligatorio";
-    if (isNaN(yearNum)) return "L'anno deve essere un numero";
-    if (yearNum < 0) return "L'anno non può essere negativo";
-    if (yearNum > currentYear + 1) return `L'anno non può essere maggiore di ${currentYear + 1}`;
-    
+
+    if (!year) return "⚠️ L'anno è obbligatorio";
+    if (isNaN(yearNum))
+      return "⚠️ Per favore inserisci un anno valido (es: 2024)";
+    if (yearNum < 0) return "⚠️ L'anno non può essere negativo";
+    if (yearNum > currentYear + 1)
+      return `⚠️ L'anno non può essere maggiore di ${currentYear + 1}`;
+
     return "";
   };
 
@@ -23,7 +25,7 @@ const BookForm = ({ formData, setFormData, addLibro, loading, generi }) => {
     });
 
     // Validate year in real-time
-    if (name === 'anno') {
+    if (name === "anno") {
       const yearError = validateYear(value);
       setErrors({
         ...errors,
@@ -34,15 +36,15 @@ const BookForm = ({ formData, setFormData, addLibro, loading, generi }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Validate all fields before submission
     const yearError = validateYear(formData.anno);
-    
+
     if (yearError) {
       setErrors({ anno: yearError });
       return;
     }
-    
+
     // Clear errors and submit
     setErrors({});
     addLibro(e);
@@ -50,7 +52,10 @@ const BookForm = ({ formData, setFormData, addLibro, loading, generi }) => {
 
   return (
     <div className="card">
-      <h2>Aggiungi Libro</h2>
+      <div className="form-header">
+        <h2>➕ Aggiungi Nuovo Libro</h2>
+        <p>Riempi i dettagli per aggiungere un libro alla tua collezione</p>
+      </div>
       <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
@@ -78,9 +83,9 @@ const BookForm = ({ formData, setFormData, addLibro, loading, generi }) => {
             value={formData.anno}
             onChange={handleChange}
             required
-            className={`form-input ${errors.anno ? 'error' : ''}`}
+            className={`form-input ${errors.anno ? "error" : ""}`}
           />
-          {errors.anno && <span className="error-message">{errors.anno}</span>}
+          {errors.anno && <div className="error-message">{errors.anno}</div>}
         </div>
         <select
           name="genere"
@@ -94,9 +99,9 @@ const BookForm = ({ formData, setFormData, addLibro, loading, generi }) => {
             </option>
           ))}
         </select>
-        <button 
-          type="submit" 
-          className="btn btn-primary" 
+        <button
+          type="submit"
+          className="btn btn-primary"
           disabled={loading || errors.anno}
         >
           Aggiungi Libro
