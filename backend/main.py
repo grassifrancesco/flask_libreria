@@ -1,23 +1,19 @@
-import random
 import sqlite3
-import uuid
 
-from faker import Faker
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
-fake = Faker()
+
+# Database connection
+def get_db_connection():
+    conn = sqlite3.connect("libri.sqlite3")
+    conn.row_factory = sqlite3.Row
+    return conn
 
 
-@app.route("/")
-def index():
-    return "INDEX DELLA API, VAI SU /api/libri PER OTTENERE DEI LIBRI"
-
-
-libri = []  # INIZIALIZZO IL VETTORE LIBRI (TODO: SOSTITUIRE CON UN DATABASE)
 generi = [
     "Fantasy",
     "Horror",
@@ -31,23 +27,14 @@ generi = [
 
 @app.route("/api/libri", methods=["GET"])
 def get_libri():
-    # for i in range(20):  # CREO 20 LIBRI
-    #     libro = {
-    #         "id": str(uuid.uuid4()),
-    #         "titolo": fake.sentence(nb_words=3).rstrip(".").title(),
-    #         "autore": fake.name(),
-    #         "anno": fake.year(),
-    #         "genere": fake.random_element(elements=("M", "F")),
-    #     }
-
-    #     libri.append(
-    #         libro
-    #     )  # AGGIUNGO IL LIBRO CREATO AL VETTORE (TODO: SOSTITUIRE CON UN DATABASE)
+    conn = get_db_connection()
+    libri = conn.execute("SELECT * FROM libro").fetchall()
+    conn.close()
 
     return jsonify(
-        {  # RITORNO UN FILE .json CONTENENTE TUTTI I LIBRI PRESENTI NEL VETTORE (TODO: SOSTITUIRE CON UN DATABASE)
+        {
             "success": True,
-            "data": libri,
+            "data": [dict(libro) for libro in libri],
         }
     )
 
@@ -66,17 +53,74 @@ def post_libro():
     ):
         return jsonify({"success": False, "error": "Dati mancanti!!!!!!"}), 400
 
+    # Validazione dell'anno
+    try:
+        anno_num = int(libro["anno"])
+        import datetime
+
+        current_year = datetime.datetime.now().year
+        if anno_num < 0:
+            return jsonify(
+                {"success": False, "error": "L'anno non può essere negativo"}
+            ), 400
+        if anno_num > current_year + 1:
+            return jsonify(
+                {
+                    "success": False,
+                    "error": f"L'anno non può essere maggiore di {current_year + 1}",
+                }
+            ), 400
+    except ValueError:
+        return jsonify(
+            {"success": False, "error": "L'anno deve essere un numero valido"}
+        ), 400
+
+    conn = get_db_connection()
+    cursor = conn.execute(
+        "INSERT INTO libro (titolo, autore, anno, genere) VALUES (?, ?, ?, ?)",
+        (libro["titolo"], libro["autore"], libro["anno"], libro["genere"]),
+    )
+    nuovo_id = cursor.lastrowid
+    conn.commit()
+    conn.close()
+
     nuovo_libro = {
-        "id": str(uuid.uuid4()),  # COME FACCIO A GENERARE UN ID USANDO IL DATABASE?
+        "id": nuovo_id,
         "titolo": libro["titolo"],
         "autore": libro["autore"],
         "anno": libro["anno"],
         "genere": libro["genere"],
     }
 
-    libri.append(nuovo_libro)  # TODO: SOSTITUIRE CON UN DATABASE
-
     return jsonify({"success": True, "data": nuovo_libro}), 201
+
+
+@app.route("/")
+def index():
+    return "INDEX DELLA API, VAI SU /api/libri PER OTTENERE DEI LIBRI"
+
+
+@app.route("/api/libri/<int:id>", methods=["DELETE"])
+def delete_libro(id):
+    conn = get_db_connection()
+    cursor = conn.execute("DELETE FROM libro WHERE id = ?", (id,))
+    conn.commit()
+    conn.close()
+
+    if cursor.rowcount == 0:
+        return jsonify({"success": False, "error": "Libro non trovato"}), 404
+
+    return jsonify({"success": True, "message": "Libro eliminato"})
+
+
+@app.route("/api/libri", methods=["DELETE"])
+def delete_all_libri():
+    conn = get_db_connection()
+    conn.execute("DELETE FROM libro")
+    conn.commit()
+    conn.close()
+
+    return jsonify({"success": True, "message": "Tutti i libri eliminati"})
 
 
 if __name__ == "__main__":
