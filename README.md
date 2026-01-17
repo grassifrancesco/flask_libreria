@@ -67,7 +67,7 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
 
 ## Licenza
 
-Questo progetto è rilasciato sotto la licenza GPL3. Per maggiori dettagli, consulta il file [LICENSE.md](LICENSE.md).
+Questo progetto è rilasciato sotto la licenza GPL3. Per maggiori dettagli, consulta il file [LICENSE](LICENSE).
 
 ---
 
