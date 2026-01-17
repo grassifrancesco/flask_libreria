@@ -99,4 +99,4 @@ Per maggiori dettagli, consulta il file [LICENSE](LICENSE)
 
 ## Codice di etica
 
-Il codice di etica di SQLite è disponibile al seguente indirizzo: https://sqlite.org/codeofethics.html
+https://sqlite.org/codeofethics.html
