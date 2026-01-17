@@ -62,3 +62,15 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
 3. Avviare il server Flask (`python3 main.py`)  
 4. Installare le dipendenze del frontend (`npm install`)  
 5. Avviare il frontend (`npm run dev`)
+
+---
+
+## Licenza
+
+Questo progetto è rilasciato sotto la licenza GPL3. Per maggiori dettagli, consulta il file [LICENSE.md](LICENSE.md).
+
+---
+
+## Codice di etica
+
+Il codice di etica di SQLite è disponibile all'indirizzo [https://sqlite.org/codeofethics.html](https://sqlite.org/codeofethics.html).
