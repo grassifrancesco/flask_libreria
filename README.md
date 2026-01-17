@@ -15,12 +15,12 @@ Progetto di TPI per la creazione di una libreria utilizzando Flask per la gestio
 
 ## COSA RIMANE DA FARE:
 
-- [] Aggiungere database SQLite
+- [x] Aggiungere database SQLite
 - [x] Richiesta GET /api/libri
-- [] Fare ancora tutto il frontend
-  - [] Renderlo bello
-- [] Richiesta POST /api/libri
-- [] Richiesta DELETE /api/libri/<id>
-- [] Richiesta DELETE /api/libri
+- [x] Fare ancora tutto il frontend
+  - [x] Renderlo bello
+- [x] Richiesta POST /api/libri
+- [x] Richiesta DELETE /api/libri/<id>
+- [x] Richiesta DELETE /api/libri
 - [] Sistemare il backend?
 - [] Sistemare il frontend?
