@@ -98,5 +98,3 @@ Per maggiori dettagli, consulta il file [LICENSE](LICENSE)
 ---
 
 https://sqlite.org/codeofethics.html
-
-test
