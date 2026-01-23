@@ -97,6 +97,4 @@ Per maggiori dettagli, consulta il file [LICENSE](LICENSE)
 
 ---
 
-## Codice di etica
-
 https://sqlite.org/codeofethics.html

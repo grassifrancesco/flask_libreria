@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-# Database connection
+# CONNESSIONE DATABASE
 def get_db_connection():
     conn = sqlite3.connect("libri.sqlite3")
     conn.row_factory = sqlite3.Row
@@ -53,7 +53,7 @@ def post_libro():
     ):
         return jsonify({"success": False, "error": "Dati mancanti!!!!!!"}), 400
 
-    # Validazione dell'anno
+    # VALIDAZIONE DELL'ANNO
     try:
         anno_num = int(libro["anno"])
         import datetime
