@@ -7,7 +7,7 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
 
 ## Diagramma della logica
 
-![Diagramma della logica dell'applicativo](diagramma_flask_libreria_drawio.svg)
+![Diagramma della logica dell'applicativo](diagramma_flask_libreria.svg)
 
 ---
 
