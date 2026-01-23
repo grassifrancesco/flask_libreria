@@ -25,6 +25,16 @@ generi = [
 ]
 
 
+@app.route("/api/generi", methods=["GET"])
+def get_generi():
+    return jsonify(
+        {
+            "success": True,
+            "data": generi,
+        }
+    )
+
+
 @app.route("/api/libri", methods=["GET"])
 def get_libri():
     conn = get_db_connection()

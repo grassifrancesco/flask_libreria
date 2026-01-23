@@ -6,6 +6,7 @@ function App() {
   const [libri, setLibri] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [generi, setGeneri] = useState([]);
   const [formData, setFormData] = useState({
     titolo: "",
     autore: "",
@@ -13,15 +14,17 @@ function App() {
     genere: "Fantasy",
   });
 
-  const generi = [
-    "Fantasy",
-    "Horror",
-    "Thriller",
-    "Romanzo",
-    "Storico",
-    "Fantascienza",
-    "Biografia",
-  ];
+  const fetchGeneri = useCallback(async () => {
+    try {
+      const res = await fetch("http://localhost:12346/api/generi");
+      const data = await res.json();
+      if (data.success) {
+        setGeneri(data.data);
+      }
+    } catch (err) {
+      console.error("Errore nel fetch dei generi: ", err);
+    }
+  }, []);
 
   const fetchLibri = useCallback(async () => {
     setLoading(true);
@@ -37,10 +40,11 @@ function App() {
     setLoading(false);
   }, []);
 
-  // Carica i libri all'avvio
+  // Carica i dati all'avvio
   useEffect(() => {
     fetchLibri();
-  }, [fetchLibri]);
+    fetchGeneri();
+  }, [fetchLibri, fetchGeneri]);
 
   const addLibro = async (e) => {
     e.preventDefault();
@@ -103,10 +107,10 @@ function App() {
     }
   };
 
-return (
+  return (
     <div className="container">
       <Header />
-      
+
       {error && (
         <div className="error-banner">
           {error}
@@ -115,7 +119,7 @@ return (
           </button>
         </div>
       )}
-      
+
       <BookForm
         formData={formData}
         setFormData={setFormData}
@@ -123,7 +127,7 @@ return (
         loading={loading}
         generi={generi}
       />
-      
+
       <BookList
         libri={libri}
         loading={loading}
