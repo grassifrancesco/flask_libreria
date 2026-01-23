@@ -111,4 +111,11 @@ Per maggiori dettagli, consulta il file [LICENSE](LICENSE)
 
 ---
 
+## I.A. Utilizzate
+
+- Copilot - Formattazione codice
+- OpenCode - Generazione file App.css, aiuto nella creazione del frontend, aiuto nella creazione file README.md
+
+---
+
 https://sqlite.org/codeofethics.html
