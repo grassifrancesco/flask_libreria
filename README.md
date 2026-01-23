@@ -36,30 +36,32 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
 ## Funzionalità implementate
 
 - [x] Configurazione database SQLite  
-- [x] Endpoint **GET /api/libri**  
+- [x] Endpoint **GET /api/libri**
+- [x] Creazione del frontend con React + Vite
+  - [x] Miglioramento estetico dell'interfaccia
 - [x] Endpoint **POST /api/libri**  
 - [x] Endpoint **DELETE /api/libri/[id]**  
-- [x] Endpoint **DELETE /api/libri**  
-- [x] Creazione del frontend con React + Vite  
-  - [x] Miglioramento estetico dell'interfaccia  
+- [x] Endpoint **DELETE /api/libri**   
 
 ---
 
 ## Attività rimanenti
 
-- [ ] Ottimizzazione del backend (validazioni, gestione errori)  
-- [ ] Miglioramenti al frontend (UI/UX, messaggi di errore, rifiniture grafiche)  
+- [x] Ottimizzazione del backend (validazioni, gestione errori)  
+- [x] Miglioramenti al frontend (UI/UX, messaggi di errore, rifiniture grafiche)  
 
 ---
 
 ## Struttura del progetto
 
 ### Backend (Flask)
+
 - API REST per la gestione dei libri  
 - Connessione al database SQLite  
 - Validazione delle richieste  
 
 ### Frontend (React + ViteJS)
+
 - Interfaccia utente per la visualizzazione e gestione dei libri  
 - Componenti modulari e riutilizzabili  
 - Gestione degli stati e delle chiamate API  
