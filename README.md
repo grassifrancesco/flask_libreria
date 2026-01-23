@@ -21,11 +21,11 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
 
 ---
 
-# User Story – Sistema di Gestione Libreria
+## User Story
 
 **Come** utente della libreria digitale **voglio** visualizzare, aggiungere, filtrare ed eliminare libri tramite un’interfaccia web intuitiva **in modo da** poter gestire facilmente la mia collezione senza dover modificare manualmente i dati.
 
-## Criteri di accettazione
+### Criteri di accettazione
 
 - Posso vedere l’elenco completo dei libri caricati dal server.  
 - Posso aggiungere un nuovo libro tramite un form.  
