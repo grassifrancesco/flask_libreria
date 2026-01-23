@@ -14,10 +14,22 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
 ## Analisi dei requisiti
 
 1. Gestione dei libri tramite API REST  
-2. Persistenza dei dati con database SQLite  
+2. Persistenza dei dati con database SQLite3
 3. Interfaccia frontend moderna e responsiva  
 4. Funzionalità CRUD (Create, Read, Update, Delete)  
 5. Integrazione tra backend e frontend  
+
+---
+
+# User Story – Sistema di Gestione Libreria
+
+**Come** utente della libreria digitale **voglio** visualizzare, aggiungere, filtrare ed eliminare libri tramite un’interfaccia web intuitiva **in modo da** poter gestire facilmente la mia collezione senza dover modificare manualmente i dati.
+
+## Criteri di accettazione
+
+- Posso vedere l’elenco completo dei libri caricati dal server.  
+- Posso aggiungere un nuovo libro tramite un form.  
+- Posso eliminare un singolo libro o svuotare l’intera libreria.
 
 ---
 
