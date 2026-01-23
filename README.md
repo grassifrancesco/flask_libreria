@@ -35,14 +35,19 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
 
 ## Funzionalità implementate
 
+### Core
+
 - [x] Configurazione database SQLite  
 - [x] Endpoint **GET /api/libri**
 - [x] Creazione del frontend con React + Vite
-  - [x] Miglioramento estetico dell'interfaccia
 - [x] Endpoint **POST /api/libri**  
 - [x] Endpoint **DELETE /api/libri/[id]**  
-- [x] Endpoint **DELETE /api/libri**  
-- [x] Endpoint **GET /api/generi**  
+- [x] Endpoint **DELETE /api/libri**
+
+### Opzionali
+
+- [x] Miglioramento estetico dell'interfaccia
+- [x] Endpoint **GET /api/generi**
 
 ---
 
@@ -73,10 +78,13 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
 
 1. Clonare il repository  
 2. Installare SQLite3 e creare il database `libri.sqlite3` nella cartella backend con il comando:  
-   ```bash
+
+  ```bash
    sqlite3 libri.sqlite3
    ```
+   
 3. Creare la tabella libro con il comando:
+
    ```sql
    CREATE TABLE libro (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -85,20 +93,29 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
     anno INTEGER NOT NULL
    );
    ```
+
 4. Installare le dipendenze del backend:
+
    ```bash
    pip install flask flask_cors
    ```
+
    (SQLite3 è già incluso di default in Python)
+
 5. Avviare il server Flask:
+
    ```bash
    python3 main.py
    ```
+
 6. Installare le dipendenze del frontend:
+
    ```bash
    npm install
    ```
+
 7. Avviare il frontend:
+
    ```bash
    npm run dev
    ```
