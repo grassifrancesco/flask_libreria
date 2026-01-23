@@ -41,7 +41,8 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
   - [x] Miglioramento estetico dell'interfaccia
 - [x] Endpoint **POST /api/libri**  
 - [x] Endpoint **DELETE /api/libri/[id]**  
-- [x] Endpoint **DELETE /api/libri**   
+- [x] Endpoint **DELETE /api/libri**  
+- [x] Endpoint **GET /api/generi**  
 
 ---
 
