@@ -23,7 +23,7 @@ Il backend è sviluppato con **Flask** e utilizza **SQLite** come database, ment
 
 ## User Story
 
-**Come** utente della libreria digitale **voglio** visualizzare, aggiungere, filtrare ed eliminare libri tramite un’interfaccia web intuitiva **in modo da** poter gestire facilmente la mia collezione senza dover modificare manualmente i dati.
+**Come** utente della libreria digitale **voglio** visualizzare, aggiungere, filtrare ed eliminare libri tramite un’interfaccia web intuitiva in modo da poter gestire **facilmente** la mia collezione.
 
 ### Criteri di accettazione
 
