@@ -214,30 +214,30 @@
         </mxCell>
         <mxCell id="tsDz_813M40apcfh_8r3-50" edge="1" parent="1" source="tsDz_813M40apcfh_8r3-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="tsDz_813M40apcfh_8r3-53" value="">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="223.5" y="695" as="targetPoint" />
+            <mxPoint x="265" y="695" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tsDz_813M40apcfh_8r3-51" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="CLIENT" vertex="1">
-          <mxGeometry height="50" width="90" x="58.5" y="670" as="geometry" />
+          <mxGeometry height="50" width="90" x="100" y="670" as="geometry" />
         </mxCell>
         <mxCell id="tsDz_813M40apcfh_8r3-52" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HTTP GET" vertex="1">
-          <mxGeometry height="30" width="70" x="158.5" y="670" as="geometry" />
+          <mxGeometry height="30" width="70" x="200" y="670" as="geometry" />
         </mxCell>
         <mxCell id="tsDz_813M40apcfh_8r3-53" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="/api/generi&lt;br&gt;FLASK" vertex="1">
-          <mxGeometry height="50" width="90" x="238.5" y="670" as="geometry" />
+          <mxGeometry height="50" width="90" x="280" y="670" as="geometry" />
         </mxCell>
         <mxCell id="tsDz_813M40apcfh_8r3-59" edge="1" parent="1" source="tsDz_813M40apcfh_8r3-53" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;" target="tsDz_813M40apcfh_8r3-51" value="">
           <mxGeometry relative="1" width="80" as="geometry">
             <Array as="points" />
-            <mxPoint x="188.5" y="730" as="sourcePoint" />
-            <mxPoint x="268.5" y="730" as="targetPoint" />
+            <mxPoint x="230" y="730" as="sourcePoint" />
+            <mxPoint x="310" y="730" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="tsDz_813M40apcfh_8r3-60" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="LEGGE TUTTI I GENERI DEFINITI NEL BACKEND" vertex="1">
-          <mxGeometry height="80" width="100" x="148.5" y="720" as="geometry" />
+          <mxGeometry height="80" width="100" x="190" y="720" as="geometry" />
         </mxCell>
         <mxCell id="tsDz_813M40apcfh_8r3-61" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=28;fontStyle=1" value="RICHIESTA GET /api/generi" vertex="1">
-          <mxGeometry height="30" width="367" x="10" y="620" as="geometry" />
+          <mxGeometry height="30" width="367" x="51.5" y="620" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
